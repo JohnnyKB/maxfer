@@ -1,5 +1,15 @@
 /* General variables and imports */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+@font-face {
+  font-family: 'FoundryMonolineRegular';
+  src: url(../fonts/foundmonreg-webfont.eot);
+  src: local("Foundry Monoline Regular"), local("Foundry Monoline Regular"), url(../fonts/foundmonreg-webfont.woff) format("woff"), url(../fonts/foundmonreg-webfont.ttf) format("truetype"), url(../fonts/foundmonreg-webfont.svg#FoundryMonolineRegular) format("svg");
+}
+@font-face {
+  font-family: 'FoundryMonolineMedium';
+  src: url(../fonts/foundmonmed-webfont.eot);
+  src: local("Foundry Monoline Medium"), local("Foundry Monoline Medium"), url(../fonts/foundmonmed-webfont.woff) format("woff"), url(../fonts/foundmonmed-webfont.ttf) format("truetype"), url(../fonts/foundmonmed-webfont.svg#FoundryMonolineMedium) format("svg");
+}
 body {
   background-color: #eee;
 }
@@ -7,6 +17,11 @@ body {
 /* Top navigation */
 .navmenu {
   height: 88px;
+}
+.navmenu__logo {
+  display: inline-block;
+  height: 88px;
+  line-height: 84px;
 }
 .navmenu__items {
   float: right;
@@ -49,8 +64,9 @@ body {
 }
 
 .highlights {
-  height: 198px;
+  min-height: 198px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  padding-bottom: 50px;
 }
 .highlights .highlight__item {
   padding: 45px 35px 0;
@@ -88,13 +104,30 @@ body {
   background-image: url("../img/icon_rocket.png");
 }
 
+.features {
+  padding-top: 50px;
+}
+.features .row {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
 .feature {
   -webkit-perspective: 1000;
           perspective: 1000;
-}
-.feature:hover .feature__content {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
+  transition: all 600ms;
+  display: inline-block;
+  position: relative;
+  margin: 2px;
+  -webkit-transform: scale(1) translateY(0) translateZ(0);
+          transform: scale(1) translateY(0) translateZ(0);
 }
 .feature, .feature__content__front, .feature__content__back {
   width: 255px;
@@ -113,18 +146,106 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  border: 1px solid #ccc;
-  background-color: #FFF;
+  cursor: pointer;
+  transition: all 600ms;
 }
 .feature__content__front {
   z-index: 2;
   /* for firefox 31 */
   -webkit-transform: rotateY(0deg);
           transform: rotateY(0deg);
+  background-color: #d6ddde;
+  background-image: url("../img/feature_bg.jpg");
+  background-position: center;
+  background-size: 99%;
+  background-repeat: no-repeat;
+  padding: 15px;
+  transition: all 600ms;
 }
 .feature__content__back {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
+  background-color: #eee;
+  font-size: 15px;
+  width: 285px;
+  overflow: hidden;
+}
+.feature.active .feature__content {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+.feature.active .feature__content__front, .feature.active .feature__content__back {
+  height: 370px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+.feature.active {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transform: translateY(-30px) translateX(15px);
+          transform: translateY(-30px) translateX(15px);
+  z-index: 10;
+}
+.feature__icon {
+  text-align: center;
+  line-height: 225px;
+  transition: all 350ms;
+}
+.feature__highlight {
+  width: 100%;
+  height: 0px;
+  background-color: #d555c7;
+  position: absolute;
+  bottom: -255px;
+  z-index: 10;
+  transition: all 133.33333ms;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.feature:hover .feature__highlight {
+  height: 40px;
+}
+.feature:hover .feature__icon {
+  line-height: 175px;
+}
+.feature:hover .feature__content__front {
+  background-position: 100% 65%;
+  background-size: 110%;
+}
+
+.backtop {
+  background-color: #d6ddde;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+}
+.backtop img {
+  height: 40px;
+  width: auto;
+}
+
+.backbottom {
+  padding: 20px;
+}
+.backbottom .header {
+  font-family: 'FoundryMonolineMedium', sans-serif;
+  font-size: 24px;
+  line-height: 1;
+}
+.backbottom .description {
+  font-size: 15px;
+  margin-top: 10px;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+footer {
+  height: 250px;
+  background-color: #d555c7;
+  margin-top: 100px;
+  line-height: 250px;
+  color: #fff;
+  font-family: 'FoundryMonolineRegular', sans-serif;
+  font-size: 18px;
 }
 
 /*# sourceMappingURL=style.css.map */

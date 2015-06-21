@@ -1,17 +1,37 @@
 /* General variables and imports */
 $transition_time: 200ms;
 $corp_pink: #d555c7;
+$corp_silver: #d6ddde;
 $font_stack: 'Open Sans', 'Helvetica Neue', sans-serif;
+
+@font-face {
+    font-family: 'FoundryMonolineRegular';
+    src: url(../fonts/foundmonreg-webfont.eot);
+    src: local('Foundry Monoline Regular'),local('Foundry Monoline Regular'),url(../fonts/foundmonreg-webfont.woff) format('woff'),url(../fonts/foundmonreg-webfont.ttf) format('truetype'),url(../fonts/foundmonreg-webfont.svg#FoundryMonolineRegular) format('svg')
+}
+
+@font-face {
+    font-family: 'FoundryMonolineMedium';
+    src: url(../fonts/foundmonmed-webfont.eot);
+    src: local('Foundry Monoline Medium'),local('Foundry Monoline Medium'),url(../fonts/foundmonmed-webfont.woff) format('woff'),url(../fonts/foundmonmed-webfont.ttf) format('truetype'),url(../fonts/foundmonmed-webfont.svg#FoundryMonolineMedium) format('svg')
+}
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
 
 body {
 	background-color: #eee;
+
 }
 
 /* Top navigation */
 .navmenu {
 	height: 88px;
+
+	&__logo {
+		display: inline-block;
+		height: 88px;
+		line-height: 84px;
+	}
 
 	&__items {
 		float: right;
@@ -62,8 +82,9 @@ body {
 }
 
 .highlights {
-	height: 198px;
+	min-height: 198px;
 	box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+	padding-bottom: 50px;
 
 	.highlight__item {
 		padding: 45px 35px 0;
@@ -107,12 +128,23 @@ body {
 	}
 }
 
+.features {
+	padding-top: 50px;
+	
+	& .row {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	}
+}
+
 .feature {
 	perspective: 1000;
-
-	&:hover &__content {
-		transform: rotateY(180deg);
-	}
+	transition: all 600ms;
+	display: inline-block;
+	position: relative;
+	margin: 2px;
+	transform: scale(1) translateY(0) translateZ(0);
 
 	&,
 	&__content__front,
@@ -132,21 +164,118 @@ body {
 			position: absolute;
 			top: 0;
 			left: 0;
-			border: 1px solid #ccc;
-			background-color: #FFF;
+			cursor: pointer;
+			transition: all 600ms;
 		}
 
 		&__front {
 			z-index: 2;
 			/* for firefox 31 */
 			transform: rotateY(0deg);
+			background-color: #d6ddde;
+			background-image: url("../img/feature_bg.jpg");
+			background-position: center;
+			background-size: 99%;
+			background-repeat: no-repeat;
+			padding: 15px;
+			transition: all $transition_time*3;
 		}
 		
 		/* back, initially hidden pane */
 		&__back {
 			transform: rotateY(180deg);
+			background-color: #eee;
+			font-size: 15px;
+			width: 285px;
+			overflow: hidden;
+		}
+	}
+
+	&.active &__content {
+		transform: rotateY(180deg);
+	}
+
+	&.active &__content__front,
+	&.active &__content__back {
+		height: 370px;
+		// height: inherit;
+		box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+	}
+
+	&.active {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		transform: translateY(-30px) translateX(15px);
+		z-index: 10;
+	}
+
+	&__icon {
+		text-align: center;
+		line-height: 225px;
+		transition: all $transition_time * 1.75;
+	}
+
+	&__highlight {
+		width: 100%;
+		height: 0px;
+		background-color: $corp_pink;
+		position: absolute;
+		bottom: -255px;
+		z-index: 10;
+		transition: all $transition_time/1.5;
+		backface-visibility: hidden;
+	}
+	
+	&:hover {
+		.feature__highlight {
+			height: 40px;
+		}
+
+		.feature__icon {
+			line-height: 175px;
+		}
+
+		.feature__content__front {
+			background-position: 100% 65%;
+			background-size: 110%;
 		}
 	}
 }
 
+.backtop {
+	background-color: $corp_silver;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
 
+	& img {
+		height: 40px;
+		width: auto;
+	}
+}
+
+.backbottom {
+	padding: 20px;
+	& .header {
+		font-family: 'FoundryMonolineMedium', sans-serif;
+		font-size: 24px;
+		line-height: 1;
+	}
+
+	& .description {
+		font-size: 15px;
+		margin-top: 10px;
+		line-height: 1.5;
+		font-weight: 300;
+	}
+}
+
+footer {
+	height: 250px;
+	background-color: $corp_pink;
+	margin-top: 100px;
+	line-height: 250px;
+	color: #fff;
+	font-family: 'FoundryMonolineRegular', sans-serif;
+	font-size: 18px;
+}
