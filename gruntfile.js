@@ -6,7 +6,7 @@ module.exports = function(grunt) {
         watch: {
             sass: {
                 files: ['sass/*.scss'],
-                tasks: ['sass:dist'],
+                tasks: ['sass:dist', 'postcss:dist'],
                 options: {
                     spawn: false,
                 },
@@ -22,6 +22,17 @@ module.exports = function(grunt) {
                 }
             } 
         },
+        postcss: {
+            options: {
+              map: true, // inline sourcemaps
+              processors: [
+                require('autoprefixer-core')({browsers: 'last 2 versions'}), // add vendor prefixes
+              ]
+            },
+            dist: {
+              src: 'css/style.css'
+            }
+          },
         browserSync: {
             files: {
                 src : [
@@ -42,9 +53,10 @@ module.exports = function(grunt) {
     // grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-browser-sync');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['browserSync', 'sass']);
+    grunt.registerTask('default', ['browserSync', 'postcss', 'watch']);
 
 };

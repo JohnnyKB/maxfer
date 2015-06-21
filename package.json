@@ -2,7 +2,8 @@
   "name": "fermaxdev",
   "version": "0.1.0",
   "devDependencies": {
-    "grunt": "~0.4.1"
+    "grunt": "~0.4.1",
+    "grunt-postcss": "^0.5.2"
   },
   "description": "Fermax development",
   "main": "gruntfile.js",

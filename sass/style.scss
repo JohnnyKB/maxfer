@@ -106,3 +106,47 @@ body {
 		background-image: url("../img/icon_rocket.png")
 	}
 }
+
+.feature {
+	perspective: 1000;
+
+	&:hover &__content {
+		transform: rotateY(180deg);
+	}
+
+	&,
+	&__content__front,
+	&__content__back {
+		width: 255px;
+		height: 255px;
+	}
+
+	&__content {
+		transition: 0.6s;
+		transform-style: preserve-3d;
+		position: relative;
+
+		&__front,
+		&__back {
+			backface-visibility: hidden;
+			position: absolute;
+			top: 0;
+			left: 0;
+			border: 1px solid #ccc;
+			background-color: #FFF;
+		}
+
+		&__front {
+			z-index: 2;
+			/* for firefox 31 */
+			transform: rotateY(0deg);
+		}
+		
+		/* back, initially hidden pane */
+		&__back {
+			transform: rotateY(180deg);
+		}
+	}
+}
+
+
