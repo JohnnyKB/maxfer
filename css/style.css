@@ -1,0 +1,91 @@
+/* General variables and imports */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+body {
+  background-color: #eee;
+}
+
+/* Top navigation */
+.navmenu {
+  height: 88px;
+}
+.navmenu__items {
+  float: right;
+}
+.navmenu__item {
+  display: inline-block;
+  line-height: 88px;
+  margin-left: 15px;
+  font-weight: bold;
+  position: relative;
+  height: 100%;
+}
+.navmenu__item a {
+  display: inline-block;
+  height: 100%;
+  color: #999;
+  text-decoration: none;
+  transition: color 200ms;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+}
+.navmenu__item:hover a, .navmenu__item.active a {
+  color: #555;
+}
+.navmenu__item:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0px;
+  background-color: #d555c7;
+  transition: height 200ms;
+}
+.navmenu__item:hover:after, .navmenu__item.active:after {
+  height: 7px;
+}
+
+.slider {
+  height: 470px;
+  background-color: #000;
+}
+
+.highlights {
+  height: 198px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+.highlights .highlight__item {
+  padding: 45px 35px 0;
+}
+.highlights .highlight__item__header {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+  display: inline-block;
+  float: left;
+  margin-bottom: 15px;
+}
+.highlights .highlight__item__body {
+  display: block;
+  float: left;
+  line-height: 1.5;
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 10px;
+  float: left;
+}
+.icon--time {
+  background-image: url("../img/icon_time.png");
+}
+.icon--support {
+  background-image: url("../img/icon_support.png");
+}
+.icon--rocket {
+  background-image: url("../img/icon_rocket.png");
+}
+
+/*# sourceMappingURL=style.css.map */
