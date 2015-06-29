@@ -10,4 +10,16 @@ $(document).ready(function(){
 			$(this).toggleClass('active');
 		}
 	});
+    $('.fuck').bind('inview', function(event, visible) {
+      if (visible) {
+        $(this).addClass('inview');
+        var k = 1;
+        $(this).siblings('.feature').each(function(i, val){
+        	setTimeout(function(){
+        		$(val).addClass('inview');
+        	}, k*125);
+        	k++;
+        });
+      }
+    });
 });
