@@ -7,13 +7,21 @@ $font_stack: 'Open Sans', 'Helvetica Neue', sans-serif;
 @font-face {
     font-family: 'FoundryMonolineRegular';
     src: url(../fonts/foundmonreg-webfont.eot);
-    src: local('Foundry Monoline Regular'),local('Foundry Monoline Regular'),url(../fonts/foundmonreg-webfont.woff) format('woff'),url(../fonts/foundmonreg-webfont.ttf) format('truetype'),url(../fonts/foundmonreg-webfont.svg#FoundryMonolineRegular) format('svg')
+    src: local('Foundry Monoline Regular'),
+    	 local('Foundry Monoline Regular'),
+    	 url(../fonts/foundmonreg-webfont.woff) format('woff'),
+    	 url(../fonts/foundmonreg-webfont.ttf) format('truetype'),
+    	 url(../fonts/foundmonreg-webfont.svg#FoundryMonolineRegular) format('svg')
 }
 
 @font-face {
     font-family: 'FoundryMonolineMedium';
     src: url(../fonts/foundmonmed-webfont.eot);
-    src: local('Foundry Monoline Medium'),local('Foundry Monoline Medium'),url(../fonts/foundmonmed-webfont.woff) format('woff'),url(../fonts/foundmonmed-webfont.ttf) format('truetype'),url(../fonts/foundmonmed-webfont.svg#FoundryMonolineMedium) format('svg')
+    src: local('Foundry Monoline Medium'),
+    	 local('Foundry Monoline Medium'),
+    	 url(../fonts/foundmonmed-webfont.woff) format('woff'),
+    	 url(../fonts/foundmonmed-webfont.ttf) format('truetype'),
+    	 url(../fonts/foundmonmed-webfont.svg#FoundryMonolineMedium) format('svg')
 }
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
@@ -216,7 +224,6 @@ body {
 	&.active &__content__front,
 	&.active &__content__back {
 		height: 370px;
-		// height: inherit;
 		box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
 	}
 
@@ -297,3 +304,19 @@ footer {
 	font-family: 'FoundryMonolineRegular', sans-serif;
 	font-size: 18px;
 }
+
+.mm-next {
+	width: 100% !important;
+
+	&:before {
+		border-color: transparent;
+	}
+}
+
+.mm-vertical .mm-listview .mm-panel {
+	padding-left: 0
+}
+
+.mm-vertical .mm-listview .mm-panel ul li a {
+		padding-left: 40px !important;
+	}

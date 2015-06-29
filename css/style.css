@@ -280,4 +280,19 @@ footer {
   font-size: 18px;
 }
 
+.mm-next {
+  width: 100% !important;
+}
+.mm-next:before {
+  border-color: transparent;
+}
+
+.mm-vertical .mm-listview .mm-panel {
+  padding-left: 0;
+}
+
+.mm-vertical .mm-listview .mm-panel ul li a {
+  padding-left: 40px !important;
+}
+
 /*# sourceMappingURL=style.css.map */

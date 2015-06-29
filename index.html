@@ -9,6 +9,7 @@
 
 		<!-- Bootstrap -->
 		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/mmenu.css">
 		<link rel="stylesheet" href="css/style.css">
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -17,9 +18,30 @@
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
+		<style>
+			.bs-snitch {
+				width: 100px;
+				height: 100px;
+				position: fixed;
+				z-index: 9999;
+				overflow: hidden;
+				bottom: 0;
+				right: 0;
+				background-color: #fff;
+				border: 3px solid red;
+				text-align: center;
+				font: 100 4em/100px 'Open Sans',sans-serif;
+			}
+		</style>
 	</head>
 	<body>
-		
+	<div class="page">
+		<div class="bs-snitch">
+			<div class="visible-xs">XS</div>
+			<div class="visible-sm">SM</div>
+			<div class="visible-md">MD</div>
+			<div class="visible-lg">LG</div>
+		</div>
 		<nav class="navmenu">
 			<div class="container">
 				<div class="row">
@@ -27,7 +49,7 @@
 						<div class="navmenu__logo">
 							<img src="img/duox_logo.png" alt="DUOX by Fermax">
 						</div>
-						<ul class="navmenu__items">
+						<ul class="navmenu__items hidden-sm hidden-xs">
 							<li class="navmenu__item">
 								<a href="#">¿Qué es DUOX?</a>
 							</li>
@@ -49,6 +71,7 @@
 								<option value="fr">Français</option>
 							</select>
 						</ul>
+						<a href="#offmenu" class="visible-sm visible-xs" style="float: right;">MENU</a>
 					</div>
 				</div>
 			</div>
@@ -293,11 +316,33 @@
 				</div>
 			</div>
 		</footer>
+	</div>
 
+	<nav id="offmenu">
+		<div>
+			<ul>
+				<li><a class="top-level" href="#">¿Qué es DUOX?</a></li>
+				<li><a class="top-level" href="#">Quiero saber más</a></li>
+				<li><a class="top-level" href="#">Manual de DUOX</a></li>
+				<li><a class="top-level" href="#">Novedades</a></li>
+				<li><a class="top-level" href="#">Idioma</a>
+					<ul>
+						<li><a href="#">Español</a></li>
+						<li><a href="#">Español (Internacional)</a></li>
+						<li><a href="#">Inglés</a></li>
+						<li><a href="#">Inglés (Internacional)</a></li>
+						<li><a href="#">Francés</a></li>
+						<li><a href="#">Francés (Internacional)</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</nav>
 	
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/inview.min.js"></script>
+		<script src="js/mmenu.min.js"></script>
 		<script src="js/main.js"></script>
 	</body>
 </html>
