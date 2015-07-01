@@ -100,6 +100,66 @@ body {
 .slider {
 	height: 470px;
 	background-color: #000;
+	color: #fff;
+	padding-top: 40px;
+
+	h1 {
+		font-size: 4em;
+		font-family: 'FoundryMonolineMedium', $font_stack;
+	}
+
+	p {
+		font-size: 1.5em;
+		font-family: 'FoundryMonolineRegular', $font_stack;
+		margin-top: 30px;
+		line-height: 1.5;
+	}
+
+	.row, .container {
+		position: relative;
+	}
+
+	.bgimg {
+		position: absolute;
+		top: -40px;
+		right: -50px;
+		z-index: 0;
+	}
+
+	.chevron {
+		position: absolute;
+		top: 50%;
+		cursor: pointer;
+		transition: all $transition_time;
+		z-index: 100;
+		
+		&:hover {
+			opacity: 0.5;
+		}
+
+		&.left {
+			left: -50px;
+		}
+
+		&.right {
+			right: -50px;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+
+		& {
+			padding-top: 20px;
+		}
+
+		h1 {
+			font-size: 3em;
+		}
+	}
+}
+
+.slide {
+	transition: all $transition_time;
 }
 
 .highlights {
