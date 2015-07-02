@@ -30,8 +30,8 @@ $(document).ready(function(){
 			$(this).toggleClass('active');
 		}
 	});
-	$('.first-feature').bind('inview', function(event, visible) {
-		if (visible) {
+	$('.first-feature').bind('inview', function(event, visible, visiblePartX, visiblePartY) {
+		if (visible && visiblePartY == 'both') {
 			$(this).addClass('inview');
 			var k = 1;
 			$(this).siblings('.feature').each(function(i, val){
