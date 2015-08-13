@@ -161,7 +161,7 @@ body {
   }
 }
 
-.duoxlogo {
+.fermaxlogo {
   width: 182px;
 }
 
@@ -362,6 +362,14 @@ footer {
   color: #fff;
   font-family: 'FoundryMonolineRegular', sans-serif;
   font-size: 18px;
+}
+
+.m-lineHeightFixer {
+  line-height: 1;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 /* offcanvas menu */
