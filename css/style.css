@@ -123,6 +123,10 @@ body {
   transition: all 200ms;
 }
 
+.target {
+  min-height: 500px;
+}
+
 .highlights {
   min-height: 198px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
@@ -363,13 +367,13 @@ footer {
   font-family: 'FoundryMonolineRegular', sans-serif;
   font-size: 18px;
 }
-
-.m-lineHeightFixer {
+footer .footer__info {
   line-height: 1;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  vertical-align: middle;
+  display: inline-block;
+}
+footer .footer__info strong {
+  font-family: 'FoundryMonolineMedium', sans-serif;
 }
 
 /* offcanvas menu */

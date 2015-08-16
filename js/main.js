@@ -55,13 +55,4 @@ $(document).ready(function(){
 		"border-full"
 		]
 	});
-
-	// var reloadSource = debounce(function(e) {
-	// 	var www = $(window).width();
-	// 	$('.target').attr('src', 'http://placehold.it/'+www+'x470')
-	// }, 150, false);
-
-	// $(window).on('resize', reloadSource);
-
-	
 });
