@@ -167,14 +167,16 @@ body {
 	min-height: 200px;
 	// height: auto;
 	transition: all $transition_time;
+	background-color: $body_bgc;
+	margin-top: 50px;
 }
 
 .target {display: none;}
 
 .page--start {
 	text-align: center;
-	padding-top: 50px;
-	background-color: $body_bgc;
+	// padding-top: 50px;
+	background-color: transparent;
 }
 
 .highlights {

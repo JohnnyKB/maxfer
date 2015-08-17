@@ -126,6 +126,8 @@ body {
 .duox-container {
   min-height: 200px;
   transition: all 200ms;
+  background-color: #eee;
+  margin-top: 50px;
 }
 
 .target {
@@ -134,8 +136,7 @@ body {
 
 .page--start {
   text-align: center;
-  padding-top: 50px;
-  background-color: #eee;
+  background-color: transparent;
 }
 
 .highlights {
