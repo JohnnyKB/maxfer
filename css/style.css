@@ -123,8 +123,19 @@ body {
   transition: all 200ms;
 }
 
+.duox-container {
+  min-height: 200px;
+  transition: all 200ms;
+}
+
 .target {
-  min-height: 500px;
+  display: none;
+}
+
+.page--start {
+  text-align: center;
+  padding-top: 50px;
+  background-color: #eee;
 }
 
 .highlights {

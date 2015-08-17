@@ -3,6 +3,7 @@ $transition_time: 200ms;
 $corp_pink: #d555c7;
 $corp_silver: #d6ddde;
 $font_stack: 'Open Sans', 'Helvetica Neue', sans-serif;
+$body_bgc: #eee;
 
 @font-face {
     font-family: 'FoundryMonolineRegular';
@@ -27,7 +28,7 @@ $font_stack: 'Open Sans', 'Helvetica Neue', sans-serif;
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
 
 body {
-	background-color: #eee;
+	background-color: $body_bgc;
 
 }
 
@@ -162,8 +163,18 @@ body {
 	transition: all $transition_time;
 }
 
-.target {
-	min-height: 500px;
+.duox-container {
+	min-height: 200px;
+	// height: auto;
+	transition: all $transition_time;
+}
+
+.target {display: none;}
+
+.page--start {
+	text-align: center;
+	padding-top: 50px;
+	background-color: $body_bgc;
 }
 
 .highlights {
@@ -245,9 +256,9 @@ body {
 	padding-top: 50px;
 	
 	& .row {
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
 	}
 }
 
