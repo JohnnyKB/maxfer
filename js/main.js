@@ -1,29 +1,45 @@
 var target = $('.target');
+var body = $('body');
+var toplevel_items = $('.navmenu__item');
 
 $(document).ready(function(){
-	
+
 	startPage();
 	loadOffmenu();
 
-	$('.navmenu__item').on('click', function(){
-		$(this).toggleClass('active');
+	$('.navmenu__item a').on('click', function(){
+		toplevelCheck($(this));
 	});
 
 	$('.trigger').on('click', loadPage);
 });
 
+function toplevelCheck (item) {
+	var page = item.data('page');
+	if (item.data('toplevel')) {
+		if (!body.hasClass(page+'-open')){
+			toplevel_items.removeClass('active');
+			item.parent('.navmenu__item').addClass('active');
+		}
+	} else {
+		toplevel_items.removeClass('active');
+	}
+}
+
 function loadPage () {
 	var page = $(this).data('page');
-	if (!$('body').hasClass(page+'-open')){
+	toplevelCheck($(this));
+	if (!body.hasClass(page+'-open')){
 		target.slideToggle(function(){
 			target.load('page--' + page + '.html', function(){
-				if (page == 'ventajas') {
+				if (page == 'ventajas' || page == 'quees') {
 					ventajasPage();
 				}
 				target.slideToggle();
+				body.removeClass();
+				body.addClass(page+'-open');
 			})
 		});
-		$('body').toggleClass(page+'-open');
 	}
 }
 
