@@ -5,6 +5,9 @@ $corp_silver: #d6ddde;
 $font_stack: 'Open Sans', 'Helvetica Neue', sans-serif;
 $body_bgc: #eee;
 
+$foundryRegular: 'FoundryMonolineRegular' $font_stack;
+$foundryMedium: 'FoundryMonolineMedium', $font_stack;
+
 @font-face {
     font-family: 'FoundryMonolineRegular';
     src: url(../fonts/foundmonreg-webfont.eot);
@@ -87,7 +90,7 @@ body {
 
 	.offmenu-toggle {
 		text-decoration: none;
-		font: 200 1em/88px 'FoundryMonolineMedium', $font_stack;
+		font: 200 1em/88px $foundryMedium;
 		color: rgb(43,53,62);
 		margin-top: 3px;
 
@@ -106,12 +109,12 @@ body {
 
 	h1 {
 		font-size: 4em;
-		font-family: 'FoundryMonolineMedium', $font_stack;
+		font-family: $foundryMedium;
 	}
 
 	p {
 		font-size: 1.5em;
-		font-family: 'FoundryMonolineRegular', $font_stack;
+		font-family: $foundryRegular;
 		margin-top: 30px;
 		line-height: 1.5;
 	}
@@ -399,7 +402,7 @@ body {
 	.backbottom {
 		padding: 20px;
 		& .header {
-			font-family: 'FoundryMonolineMedium', sans-serif;
+			font-family: $foundryMedium;
 			font-size: 24px;
 			line-height: 1;
 		}
@@ -419,7 +422,7 @@ footer {
 	margin-top: 100px;
 	line-height: 250px;
 	color: #fff;
-	font-family: 'FoundryMonolineRegular', sans-serif;
+	font-family: $foundryRegular;
 	font-size: 18px;
 
 	.footer__info {
@@ -428,7 +431,7 @@ footer {
 		display: inline-block;
 
 		strong {
-			font-family: 'FoundryMonolineMedium', sans-serif;
+			font-family: $foundryMedium;
 		}
 	}
 }
@@ -469,7 +472,7 @@ footer {
 	border: solid #CCC;
 	border-width: 10px 0;
 	color: #333;
-	font-family: 'FoundryMonolineMedium', $font_stack;
+	font-family: $foundryMedium;
 	line-height: 370px;
 	@media screen and (max-width: 991px) {
 		line-height: 150px;
@@ -493,7 +496,7 @@ footer {
 		color: #fff;
 		width: 300px;
 		height: 100px;
-		font: 1.8em/1 'FoundryMonolineRegular', $font_stack;
+		font: 1.8em/1 $foundryRegular;
 		padding: 15px;
 		text-align: center;
 		display: inline-block;

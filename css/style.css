@@ -81,7 +81,7 @@ body {
 }
 .slider p {
   font-size: 1.5em;
-  font-family: "FoundryMonolineRegular", "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "FoundryMonolineRegular" "Open Sans", "Helvetica Neue", sans-serif;
   margin-top: 30px;
   line-height: 1.5;
 }
@@ -359,7 +359,7 @@ body {
   padding: 20px;
 }
 .feature .backbottom .header {
-  font-family: 'FoundryMonolineMedium', sans-serif;
+  font-family: "FoundryMonolineMedium", "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 24px;
   line-height: 1;
 }
@@ -376,7 +376,7 @@ footer {
   margin-top: 100px;
   line-height: 250px;
   color: #fff;
-  font-family: 'FoundryMonolineRegular', sans-serif;
+  font-family: "FoundryMonolineRegular" "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 18px;
 }
 footer .footer__info {
@@ -385,7 +385,7 @@ footer .footer__info {
   display: inline-block;
 }
 footer .footer__info strong {
-  font-family: 'FoundryMonolineMedium', sans-serif;
+  font-family: "FoundryMonolineMedium", "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 /* offcanvas menu */
@@ -446,7 +446,7 @@ footer .footer__info strong {
   color: #fff;
   width: 300px;
   height: 100px;
-  font: 1.8em/1 "FoundryMonolineRegular", "Open Sans", "Helvetica Neue", sans-serif;
+  font: 1.8em/1 "FoundryMonolineRegular" "Open Sans", "Helvetica Neue", sans-serif;
   padding: 15px;
   text-align: center;
   display: inline-block;
