@@ -14,7 +14,7 @@ $(document).ready(function(){
 	$('.trigger').on('click', loadPage);
 });
 
-function toplevelCheck (item) {
+function toplevelCheck(item) {
 	var page = item.data('page');
 	if (item.data('toplevel')) {
 		if (!body.hasClass(page+'-open')){
@@ -26,7 +26,8 @@ function toplevelCheck (item) {
 	}
 }
 
-function loadPage () {
+function loadPage(e) {
+	e.preventDefault();
 	var page = $(this).data('page');
 	toplevelCheck($(this));
 	if (!body.hasClass(page+'-open')){
@@ -47,7 +48,7 @@ function startPage() {
 	target.load('page--start.html', function(){
 		setTimeout(function(){
 			target.slideToggle();
-		},1000)
+		},500)
 	});
 }
 
