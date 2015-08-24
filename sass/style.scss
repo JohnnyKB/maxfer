@@ -243,9 +243,9 @@ body {
 	border-color: hsla(0,0%,82%,1);
 	font-weight: 300;
 
-	&:hover {
-		animation: gggg 500ms linear both;
-		animation-iteration-count: 1;
+	&:hover .icon {
+		animation: animateIcon 1000ms ease-in-out both;
+		animation-iteration-count: infinite;
 	}
 }
 
@@ -257,7 +257,7 @@ body {
 	background-position: 10% 50%;
 	background-size: 100% 100%;
 	opacity: 0.7;
-
+	
 	&--camara {
 		background-image: url("../img/icon_camara.png")
 	}
@@ -271,34 +271,6 @@ body {
 	}
 }
 
-@keyframes bganimation {
-  0% {
-    background-position: 50% 50%;
-  }
-  25% {
-  	background-position: 50% 0;
-  }
-  50% {
-  	background-position: 50% -50%;
-  }
-  100% {
-    background-position: 50% -50%;
-  }
-}
-@keyframes pulse {
-  0% {
-    background-position: 50% 50%;
-  }
-  25% {
-  	background-position: 50% 0;
-  }
-  50% {
-  	background-position: 50% -50%;
-  }
-  100% {
-    background-position: 50% -50%;
-  }
-}
 .features {
 	padding-top: 50px;
 	
