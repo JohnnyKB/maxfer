@@ -134,47 +134,22 @@ body {
   display: none;
 }
 
-.page--start {
-  text-align: center;
-  background-color: transparent;
-}
-
 .highlights {
   min-height: 198px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
   padding-bottom: 50px;
 }
 .highlights .highlight__item {
-  padding: 45px 35px 0;
+  padding: 45px 45px 0;
+  text-align: center;
 }
-.highlights .highlight__item__header {
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 16px;
-  display: inline-block;
-  float: left;
-  margin-bottom: 15px;
+.highlights .highlight__item .text-trigger {
+  margin-top: 20px;
+  font: 400 1.2em/1.2 "Open Sans", "Helvetica Neue", sans-serif;
+  color: rgba(0, 0, 0, 0.5);
 }
-.highlights .highlight__item__body {
-  display: block;
-  float: left;
-  line-height: 1.5;
-}
-@media screen and (max-width: 991px) {
-  .highlights .highlight__item {
-    padding-top: 30px;
-  }
-  .highlights .highlight__item__header {
-    margin-bottom: 5px;
-  }
-  .highlights .highlight__item__body {
-    margin-bottom: 30px;
-  }
-}
-@media screen and (max-width: 991px) {
-  .highlights {
-    padding-bottom: 0;
-  }
+.highlights .highlight__item:hover .text-trigger {
+  color: #333;
 }
 
 .fermaxlogo {
@@ -194,21 +169,21 @@ body {
   border-color: #d1d1d1;
   font-weight: 300;
 }
-.btn-section:hover .icon {
-  -webkit-animation: animateIcon 1000ms ease-in-out both;
-          animation: animateIcon 1000ms ease-in-out both;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-}
 
 .icon {
-  width: 36px;
-  height: 36px;
+  width: 28px;
+  height: 28px;
   display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
   background-repeat: no-repeat;
   background-position: 10% 50%;
   background-size: 100% 100%;
   opacity: 0.7;
+  transition: all 200ms linear;
 }
 .icon--camara {
   background-image: url("../img/icon_camara.png");
@@ -218,6 +193,39 @@ body {
 }
 .icon--instalador {
   background-image: url("../img/icon_instalador.png");
+}
+.icon__container {
+  width: 120px;
+  height: 120px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #FFF;
+  border: 1px solid #d1d1d1;
+  position: relative;
+}
+
+.rounder {
+  width: 80px;
+  height: 80px;
+  background-color: #FFF;
+  display: inline-block;
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  transition: all 200ms ease-in-out;
+}
+
+.highlight__item:hover .rounder {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+  box-shadow: 2px -2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fefefe;
+}
+
+.highlight__item:hover .rounder .icon {
+  -webkit-transform: rotate(-135deg) translateX(20px);
+          transform: rotate(-135deg) translateX(20px);
 }
 
 .features {
@@ -236,8 +244,8 @@ body {
 }
 
 .feature {
-  -webkit-perspective: 1000;
-          perspective: 1000;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
   transition: all 600ms;
   display: inline-block;
   position: relative;
@@ -478,10 +486,32 @@ footer .footer__info strong {
   position: absolute;
   top: -50%;
   right: 0;
-  -webkit-filter: drop-shadow(0 0 5px black);
+  -webkit-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
   filter: url(#drop-shadow);
   -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#444')";
   filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#444')";
+}
+
+/* PAGES AND SECTIONS */
+.page--start {
+  text-align: center;
+  background-color: transparent;
+}
+
+.page--novedades {
+  font-family: "FoundryMonolineMedium", "Open Sans", "Helvetica Neue", sans-serif;
+  padding: 0 0 0 150px;
+}
+.page--novedades p {
+  font-size: 2em;
+  line-height: 1;
+}
+.page--novedades h1 {
+  font-size: 4.2em;
+  font-family: "FoundryMonolineRegular" "Open Sans", "Helvetica Neue", sans-serif;
+}
+.page--novedades .highlight {
+  color: #d555c7;
 }
 
 @-webkit-keyframes animateIcon {

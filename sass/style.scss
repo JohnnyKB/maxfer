@@ -177,51 +177,25 @@ body {
 
 .target {display: none;}
 
-.page--start {
-	text-align: center;
-	// padding-top: 50px;
-	background-color: transparent;
-}
-
 .highlights {
 	min-height: 198px;
 	box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
 	padding-bottom: 50px;
 
 	.highlight__item {
-		padding: 45px 35px 0;
+		padding: 45px 45px 0;
+		text-align: center;
 
-		&__header {
-			text-transform: uppercase;
-			font-weight: bold;
-			font-size: 16px;
-			display: inline-block;
-			float: left;
-			margin-bottom: 15px;
+		.text-trigger {
+			margin-top: 20px;
+			font: 400 1.2em/1.2 $font_stack;
+			color: rgba(0,0,0,0.5);
 		}
 
-		&__body {
-			display: block;
-			float: left;
-			line-height: 1.5;
-		}
-
-		@media screen and (max-width: 991px) {
-			& {
-				padding-top: 30px;
+		&:hover {
+			.text-trigger {
+				color: #333;
 			}
-			&__header {
-				margin-bottom: 5px;
-			}
-			&__body {
-				margin-bottom: 30px;
-			}
-		}
-	}
-
-	@media screen and (max-width: 991px) {
-		& {
-			padding-bottom: 0;
 		}
 	}
 }
@@ -243,20 +217,25 @@ body {
 	border-color: hsla(0,0%,82%,1);
 	font-weight: 300;
 
-	&:hover .icon {
-		animation: animateIcon 1000ms ease-in-out both;
-		animation-iteration-count: infinite;
-	}
+	// &:hover .icon {
+	// 	animation: animateIcon 1000ms ease-in-out both;
+	// 	animation-iteration-count: infinite;
+	// }
 }
 
 .icon {
-	width: 36px;
-	height: 36px;
+	width: 28px;
+	height: 28px;
 	display: inline-block;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%) rotate(-45deg);
 	background-repeat: no-repeat;
 	background-position: 10% 50%;
 	background-size: 100% 100%;
 	opacity: 0.7;
+	transition: all $transition_time linear;
 	
 	&--camara {
 		background-image: url("../img/icon_camara.png")
@@ -269,6 +248,39 @@ body {
 	&--instalador {
 		background-image: url("../img/icon_instalador.png")
 	}
+
+	&__container {
+		width: 120px;
+		height: 120px;
+		text-align: center;
+		// line-height: 120px;
+		border-radius: 50%;
+		background-color: #FFF;
+		border: 1px solid hsla(0,0%,82%,1);
+		position: relative;
+	}
+}
+
+.rounder {
+	width: 80px;
+	height: 80px;
+	background-color: #FFF;
+	display: inline-block;
+	position: relative;
+	box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+	transform: rotate(45deg);
+	transition: all $transition_time ease-in-out;
+}
+
+.highlight__item:hover .rounder {
+	transform: rotate(135deg);
+	box-shadow: 2px -2px 5px rgba(0,0,0,0.1);
+	background-color: #fefefe;
+}
+
+.highlight__item:hover .rounder .icon {
+	transform: rotate(-135deg) translateX(20px);
+	// transform-origin: top center;
 }
 
 .features {
@@ -282,7 +294,7 @@ body {
 }
 
 .feature {
-	perspective: 1000;
+	perspective: 1000px;
 	transition: all 600ms;
 	display: inline-block;
 	position: relative;
@@ -530,10 +542,35 @@ footer {
 	position: absolute;
 	top: -50%;
 	right: 0;
-    -webkit-filter: drop-shadow(0 0 5px rgba(0,0,0,1));
+    -webkit-filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
     filter: url(#drop-shadow);
     -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#444')";
     filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#444')";
+}
+
+/* PAGES AND SECTIONS */
+
+.page--start {
+	text-align: center;
+	background-color: transparent;
+}
+
+.page--novedades {
+	font-family: $foundryMedium;
+	padding: 0 0 0 150px;
+	p {
+		font-size: 2em;
+		line-height: 1;
+	}
+
+	h1 {
+		font-size: 4.2em;
+		font-family: $foundryRegular;
+	}
+
+	.highlight {
+		color: $corp_pink;
+	}
 }
 
 

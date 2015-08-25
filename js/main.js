@@ -53,14 +53,6 @@ function startPage() {
 }
 
 function ventajasPage () {
-	$('.feature').on('click', function(){
-		if ($(this).siblings().hasClass('active')) {
-			$(this).siblings().removeClass('active');
-			$(this).toggleClass('active');
-		} else {
-			$(this).toggleClass('active');
-		}
-	});
 	$('.first-feature').bind('inview', function(event, visible, visiblePartX, visiblePartY) {
 		if (visible && visiblePartY == 'both') {
 			$(this).addClass('inview');
@@ -72,6 +64,16 @@ function ventajasPage () {
 				k++;
 			});
 			$(this).unbind('inview');
+			setTimeout(function(){
+				$('.feature').on('click', function(){
+					if ($(this).siblings().hasClass('active')) {
+						$(this).siblings().removeClass('active');
+						$(this).toggleClass('active');
+					} else {
+						$(this).toggleClass('active');
+					}
+				});
+			}, 1500);
 		}
 	});
 }
