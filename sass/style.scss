@@ -185,11 +185,20 @@ body {
 	.highlight__item {
 		padding: 45px 45px 0;
 		text-align: center;
+		opacity: 0;
+		transition: all $transition_time*1.5 ease-in-out;
+		transform: translateY(-50px);
+
+		&.inview {
+			opacity: 1;
+			transform: translateY(0);
+		}
 
 		.text-trigger {
 			margin-top: 20px;
 			font: 400 1.2em/1.2 $font_stack;
 			color: rgba(0,0,0,0.5);
+			cursor: pointer;
 		}
 
 		&:hover {
@@ -210,18 +219,13 @@ body {
 	margin-top: 7px;
 }
 
-.btn-section {
-	white-space: normal;
-	background: linear-gradient(hsla(0,0%,91%,1), hsla(0,0%,87%,1));
-	color: hsla(0,0%,40%,1);
-	border-color: hsla(0,0%,82%,1);
-	font-weight: 300;
-
-	// &:hover .icon {
-	// 	animation: animateIcon 1000ms ease-in-out both;
-	// 	animation-iteration-count: infinite;
-	// }
-}
+// .btn-section {
+// 	white-space: normal;
+// 	background: linear-gradient(hsla(0,0%,91%,1), hsla(0,0%,87%,1));
+// 	color: hsla(0,0%,40%,1);
+// 	border-color: hsla(0,0%,82%,1);
+// 	font-weight: 300;
+// }
 
 .icon {
 	width: 28px;
@@ -230,7 +234,7 @@ body {
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	transform: translate(-50%,-50%) rotate(-45deg);
+	transform: translate(-50%,-50%);
 	background-repeat: no-repeat;
 	background-position: 10% 50%;
 	background-size: 100% 100%;
@@ -264,23 +268,36 @@ body {
 .rounder {
 	width: 80px;
 	height: 80px;
+	border-radius: 50%;
 	background-color: #FFF;
 	display: inline-block;
 	position: relative;
+	cursor: pointer;
 	box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-	transform: rotate(45deg);
+	// transform: rotate(45deg);
 	transition: all $transition_time ease-in-out;
 }
 
-.highlight__item:hover .rounder {
-	transform: rotate(135deg);
-	box-shadow: 2px -2px 5px rgba(0,0,0,0.1);
-	background-color: #fefefe;
-}
+.highlight__item:hover .rounder,
+.highlight__item .rounder.active {
+	-webkit-animation: iccc 750ms linear both;
+	animation: iccc 750ms linear both;
+	background-color: lighten($corp_pink, 20%);
 
-.highlight__item:hover .rounder .icon {
-	transform: rotate(-135deg) translateX(20px);
-	// transform-origin: top center;
+	.icon--camara {
+		background-image: url("../img/icon_camara_w.png");
+		opacity: 1;
+	}
+
+	.icon--visionario {
+		background-image: url("../img/icon_visionario_w.png");
+		opacity: 1;
+	}
+
+	.icon--instalador {
+		background-image: url("../img/icon_instalador_w.png");
+		opacity: 1;
+	}
 }
 
 .features {
@@ -570,6 +587,13 @@ footer {
 
 	.highlight {
 		color: $corp_pink;
+	}
+}
+
+.page--manual {
+	.manual__image {
+		width: auto;
+		height: 250px;
 	}
 }
 

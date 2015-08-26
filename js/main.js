@@ -6,6 +6,7 @@ $(document).ready(function(){
 
 	startPage();
 	loadOffmenu();
+	loadButtons();
 
 	$('.navmenu__item a').on('click', function(){
 		toplevelCheck($(this));
@@ -31,6 +32,8 @@ function loadPage(e) {
 	var page = $(this).data('page');
 	toplevelCheck($(this));
 	if (!body.hasClass(page+'-open')){
+		// $(this).addClass('active');
+		// $(this).siblings('.rounder').removeClass('active');
 		target.slideToggle(function(){
 			target.load('page--' + page + '.html', function(){
 				if (page == 'ventajas' || page == 'quees') {
@@ -77,6 +80,23 @@ function ventajasPage () {
 		}
 	});
 }
+
+function loadButtons () {
+	$('.first-button').bind('inview', function(event, visible, visiblePartX, visiblePartY) {
+		if (visible && visiblePartY == 'both') {
+			$(this).addClass('inview');
+			var k = 1;
+			$(this).siblings('.highlight__item').each(function(i, val){
+				setTimeout(function(){
+					$(val).addClass('inview');
+				}, k*250);
+				k++;
+			});
+			$(this).unbind('inview');
+		}
+	});
+}
+
 
 function loadOffmenu () {
 	$("#offmenu").mmenu({
