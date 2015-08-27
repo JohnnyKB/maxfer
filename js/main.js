@@ -53,6 +53,7 @@ function startPage() {
 			target.slideToggle();
 		},500)
 	});
+	body.addClass('start-open');
 }
 
 function ventajasPage () {
@@ -86,7 +87,7 @@ function loadButtons () {
 		if (visible && visiblePartY == 'both') {
 			$(this).addClass('inview');
 			var k = 1;
-			$(this).siblings('.highlight__item').each(function(i, val){
+			$(this).parent('.col-md-3').siblings().children('.highlight__item').each(function(i, val){
 				setTimeout(function(){
 					$(val).addClass('inview');
 				}, k*250);

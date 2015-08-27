@@ -137,15 +137,15 @@ body {
 .highlights {
   min-height: 198px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-  padding-bottom: 50px;
 }
 .highlights .highlight__item {
-  padding: 45px 45px 0;
+  margin: 30px 40px 0;
   text-align: center;
   opacity: 0;
   transition: all 300ms ease-in-out;
   -webkit-transform: translateY(-50px);
           transform: translateY(-50px);
+  cursor: pointer;
 }
 .highlights .highlight__item.inview {
   opacity: 1;
@@ -153,7 +153,7 @@ body {
           transform: translateY(0);
 }
 .highlights .highlight__item .text-trigger {
-  margin-top: 20px;
+  margin-top: 10px;
   font: 400 1.2em/1.2 "Open Sans", "Helvetica Neue", sans-serif;
   color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
@@ -170,6 +170,22 @@ body {
   width: 210px;
   vertical-align: top;
   margin-top: 7px;
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .icon {
@@ -189,6 +205,9 @@ body {
 }
 .icon--camara {
   background-image: url("../img/icon_camara.png");
+}
+.icon--duox {
+  background-image: url("../img/icon_duox.png");
 }
 .icon--visionario {
   background-image: url("../img/icon_visionario.png");
@@ -222,11 +241,16 @@ body {
 .highlight__item .rounder.active {
   -webkit-animation: iccc 750ms linear both;
   animation: iccc 750ms linear both;
-  background-color: #e9a7e2;
+  background-color: #9daeb1;
 }
 .highlight__item:hover .rounder .icon--camara,
 .highlight__item .rounder.active .icon--camara {
   background-image: url("../img/icon_camara_w.png");
+  opacity: 1;
+}
+.highlight__item:hover .rounder .icon--duox,
+.highlight__item .rounder.active .icon--duox {
+  background-image: url("../img/icon_duox_w.png");
   opacity: 1;
 }
 .highlight__item:hover .rounder .icon--visionario,
@@ -505,9 +529,31 @@ footer .footer__info strong {
 }
 
 /* PAGES AND SECTIONS */
+.section__title {
+  font: 3.5em "FoundryMonolineMedium", "Open Sans", "Helvetica Neue", sans-serif;
+  color: #516264;
+}
+
+.section__subtitle {
+  font: 1.5em "Open Sans", "Helvetica Neue", sans-serif;
+  color: #81979a;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.section__text {
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 125%;
+}
+
+.highlight {
+  color: #d555c7;
+}
+
 .page--start {
   text-align: center;
   background-color: transparent;
+  margin-bottom: 75px;
 }
 
 .page--novedades {
@@ -522,13 +568,13 @@ footer .footer__info strong {
   font-size: 4.2em;
   font-family: "FoundryMonolineRegular" "Open Sans", "Helvetica Neue", sans-serif;
 }
-.page--novedades .highlight {
-  color: #d555c7;
-}
 
 .page--manual .manual__image {
   width: auto;
   height: 250px;
+}
+.page--manual .manual__title {
+  margin: 20px 0 10px;
 }
 
 .animation-target {
