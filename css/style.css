@@ -279,7 +279,7 @@ body {
           flex-wrap: wrap;
 }
 
-.feature {
+.feature, .spec {
   -webkit-perspective: 1000px;
           perspective: 1000px;
   transition: all 600ms;
@@ -289,7 +289,7 @@ body {
   -webkit-transform: scale(1) translateY(0) translateZ(0);
           transform: scale(1) translateY(0) translateZ(0);
 }
-.feature.inview .feature__content {
+.feature.inview .feature__content, .inview.spec .feature__content {
   -webkit-animation: enter 1s;
           animation: enter 1s;
   -webkit-animation-iteration-count: 1;
@@ -320,7 +320,7 @@ body {
             transform: rotate3d(1, 0, 0, 0deg);
   }
 }
-.feature, .feature__content__front, .feature__content__back {
+.feature, .spec, .feature__content__front, .feature__content__back {
   width: 255px;
   height: 255px;
 }
@@ -362,15 +362,15 @@ body {
   width: 285px;
   overflow: hidden;
 }
-.feature.active .feature__content {
+.feature.active .feature__content, .active.spec .feature__content {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
 }
-.feature.active .feature__content__front, .feature.active .feature__content__back {
+.feature.active .feature__content__front, .active.spec .feature__content__front, .feature.active .feature__content__back, .active.spec .feature__content__back {
   height: 370px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
 }
-.feature.active {
+.feature.active, .active.spec {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-transform: translateY(-30px) translateX(15px);
@@ -393,39 +393,70 @@ body {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
-.feature:hover .feature__highlight {
+.feature:hover .feature__highlight, .spec:hover .feature__highlight {
   height: 40px;
 }
-.feature:hover .feature__icon {
+.feature:hover .feature__icon, .spec:hover .feature__icon {
   line-height: 175px;
 }
-.feature:hover .feature__content__front {
+.feature:hover .feature__content__front, .spec:hover .feature__content__front {
   background-position: 100% 65%;
   background-size: 110%;
 }
-.feature .backtop {
+.feature .backtop, .spec .backtop {
   background-color: #d6ddde;
   height: 100px;
   line-height: 100px;
   text-align: center;
 }
-.feature .backtop img {
+.feature .backtop img, .spec .backtop img {
   height: 40px;
   width: auto;
 }
-.feature .backbottom {
+.feature .backbottom, .spec .backbottom {
   padding: 20px;
 }
-.feature .backbottom .header {
+.feature .backbottom .header, .spec .backbottom .header {
   font-family: "FoundryMonolineMedium", "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 24px;
   line-height: 1;
 }
-.feature .backbottom .description {
+.feature .backbottom .description, .spec .backbottom .description {
   font-size: 15px;
   margin-top: 10px;
   line-height: 1.5;
   font-weight: 300;
+}
+
+.spec {
+  height: 195px;
+  width: 360px;
+}
+.spec.active {
+  -webkit-transform: translateY(-30px) translateX(0px);
+          transform: translateY(-30px) translateX(0px);
+}
+.spec .feature__content__front,
+.spec .feature__content__back {
+  height: 195px;
+  width: 360px;
+}
+.spec .feature__content__front {
+  padding: 0;
+}
+.spec .feature__highlight {
+  bottom: -195px;
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+  font: 1.5em/40px "FoundryMonolineMedium", "Open Sans", "Helvetica Neue", sans-serif;
+}
+.spec .backtop {
+  font: 2em/100px "FoundryMonolineMedium", "Open Sans", "Helvetica Neue", sans-serif;
+}
+.spec.active .feature__content__front, .spec.active .feature__content__back {
+  height: 265px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
 }
 
 footer {
