@@ -131,14 +131,14 @@ body {
   position: relative;
 }
 .duox-container .visionario {
-  opacity: 0.75;
+  opacity: 0.35;
   background-image: url("../img/visionario.png");
   background-size: cover;
-  width: 300px;
-  height: 300px;
+  width: 275px;
+  height: 275px;
   position: absolute;
   bottom: -100px;
-  left: -135px;
+  left: -155px;
 }
 
 .target {
@@ -185,11 +185,11 @@ body {
 
 .videoWrapper {
   position: relative;
-  padding-bottom: 26.1%;
+  padding-bottom: 39.8%;
   /* 16:9 was 56.25% */
   padding-top: 25px;
   height: 0;
-  width: 50%;
+  width: 75%;
   margin: 0 auto;
 }
 
@@ -221,6 +221,8 @@ body {
 }
 .icon--duox {
   background-image: url("../img/icon_duox.png");
+  width: 38px;
+  height: 38px;
 }
 .icon--visionario {
   background-image: url("../img/icon_visionario.png");
@@ -618,15 +620,30 @@ footer .footer__info strong {
 
 .page--manual .manual__image {
   width: auto;
-  height: 250px;
+  height: 300px;
+  display: block;
 }
 .page--manual .manual__title {
   margin: 20px 0 10px;
 }
 
 .page--duox .duox__image {
-  height: 200px;
+  height: 350px;
   width: auto;
+}
+
+.page--quees .features .container {
+  max-width: 750px;
+  margin: 0 auto;
+}
+.page--quees .section__title {
+  text-align: center;
+}
+
+.btn-fermax {
+  color: #601858;
+  background-color: #d555c7;
+  border-color: #9d2790;
 }
 
 .animation-target {

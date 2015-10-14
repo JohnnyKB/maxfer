@@ -175,14 +175,14 @@ body {
 	position: relative;
 
 	.visionario {
-		opacity: 0.75;
+		opacity: 0.35;
 		background-image: url("../img/visionario.png");
 		background-size: cover;
-		width: 300px;
-		height: 300px;
+		width: 275px;
+		height: 275px;
 		position: absolute;
 		bottom: -100px;
-		left: -135px;
+		left: -155px;
 	}
 }
 
@@ -233,10 +233,10 @@ body {
 
 .videoWrapper {
 	position: relative;
-	padding-bottom: 26.1%; /* 16:9 was 56.25% */
+	padding-bottom: 39.8%; /* 16:9 was 56.25% */
 	padding-top: 25px;
 	height: 0;
-	width: 50%;
+	width: 75%;
 	margin: 0 auto;
 }
 .videoWrapper iframe {
@@ -265,7 +265,9 @@ body {
 	}
 
 	&--duox {
-		background-image: url("../img/icon_duox.png")
+		background-image: url("../img/icon_duox.png");
+		width: 38px;
+		height: 38px;
 	}
 
 	&--visionario {
@@ -680,7 +682,8 @@ footer {
 .page--manual {
 	.manual__image {
 		width: auto;
-		height: 250px;
+		height: 300px;
+		display: block;
 	}
 
 	.manual__title {
@@ -690,9 +693,26 @@ footer {
 
 .page--duox {
 	.duox__image {
-		height: 200px;
+		height: 350px;
 		width: auto;
 	}
+}
+
+.page--quees {
+	.features .container {
+		max-width: 750px;
+		margin: 0 auto;
+	}
+
+	.section__title {
+		text-align: center;
+	}
+}
+
+.btn-fermax {
+	color: darken($corp_pink, 35);;
+	background-color: $corp_pink;
+	border-color: darken($corp_pink, 20);
 }
 
 
