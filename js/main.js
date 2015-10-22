@@ -18,6 +18,18 @@ $(document).ready(function(){
 	});
 
 	$('.trigger').on('click', loadPage);
+	
+	var unslider = $('.slider').unslider({
+		fluid: true,
+		delay: 8000
+	});
+    
+    $('.chevron').click(function() {
+        var fn = this.className.split(' ')[1];
+        
+        //  Either do unslider.data('unslider').next() or .prev() depending on the className
+        unslider.data('unslider')[fn]();
+    });
 });
 
 function toplevelCheck(item) {

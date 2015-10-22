@@ -35,6 +35,14 @@ body {
 	background-color: $body_bgc;
 }
 
+
+.slider { position: relative; overflow: auto; }
+.slider ul { padding: 0; }
+.slider li { list-style: none; }
+.slider ul li { float: left; text-align: center; }
+.slider-temp-image {max-width: 100%;}
+
+
 /* Top navigation */
 .navmenu {
 	height: 88px;
@@ -105,7 +113,8 @@ body {
 	height: 470px;
 	background-color: #000;
 	color: #fff;
-	padding-top: 40px;
+	width: 100% !important;
+	// padding-top: 40px;
 
 	h1 {
 		font-size: 4em;
@@ -132,7 +141,7 @@ body {
 
 	.chevron {
 		position: absolute;
-		top: 50%;
+		top: 208px;
 		cursor: pointer;
 		transition: all $transition_time;
 		z-index: 100;
@@ -141,11 +150,11 @@ body {
 			opacity: 0.5;
 		}
 
-		&.left {
+		&.prev {
 			left: -50px;
 		}
 
-		&.right {
+		&.next {
 			right: -50px;
 		}
 	}
@@ -153,7 +162,7 @@ body {
 	@media screen and (max-width: 768px) {
 
 		& {
-			padding-top: 20px;
+			// padding-top: 20px;
 		}
 
 		h1 {

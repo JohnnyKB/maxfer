@@ -14,6 +14,28 @@ body {
   background-color: #eee;
 }
 
+.slider {
+  position: relative;
+  overflow: auto;
+}
+
+.slider ul {
+  padding: 0;
+}
+
+.slider li {
+  list-style: none;
+}
+
+.slider ul li {
+  float: left;
+  text-align: center;
+}
+
+.slider-temp-image {
+  max-width: 100%;
+}
+
 /* Top navigation */
 .navmenu {
   height: 88px;
@@ -73,7 +95,7 @@ body {
   height: 470px;
   background-color: #000;
   color: #fff;
-  padding-top: 40px;
+  width: 100% !important;
 }
 .slider h1 {
   font-size: 4em;
@@ -96,7 +118,7 @@ body {
 }
 .slider .chevron {
   position: absolute;
-  top: 50%;
+  top: 208px;
   cursor: pointer;
   transition: all 200ms;
   z-index: 100;
@@ -104,16 +126,13 @@ body {
 .slider .chevron:hover {
   opacity: 0.5;
 }
-.slider .chevron.left {
+.slider .chevron.prev {
   left: -50px;
 }
-.slider .chevron.right {
+.slider .chevron.next {
   right: -50px;
 }
 @media screen and (max-width: 768px) {
-  .slider {
-    padding-top: 20px;
-  }
   .slider h1 {
     font-size: 3em;
   }
